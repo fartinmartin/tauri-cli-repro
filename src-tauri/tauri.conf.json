@@ -1,0 +1,82 @@
+{
+	"build": {
+		"beforeDevCommand": "yarn dev",
+		"beforeBuildCommand": "yarn build",
+		"devPath": "http://localhost:1420",
+		"distDir": "../dist",
+		"withGlobalTauri": false
+	},
+	"package": {
+		"productName": "testing-cli",
+		"version": "0.0.0"
+	},
+	"tauri": {
+		"allowlist": {
+			"all": false,
+			"shell": {
+				"all": false,
+				"open": true
+			}
+		},
+		"cli": {
+			"description": "Welcome",
+			"longDescription": "this app does stuff",
+			"beforeHelp": "",
+			"afterHelp": "",
+			"args": [
+				{
+					"name": "help",
+					"short": "h",
+					"multipleOccurrences": false,
+					"description": "Print help information"
+				},
+				{
+					"name": "version",
+					"short": "v",
+					"multipleOccurrences": false,
+					"description": "Print the version"
+				},
+				{
+					"name": "headless",
+					"short": "s",
+					"multipleOccurrences": false,
+					"description": "Use Headless mode to run without a User Interface"
+				},
+				{
+					"name": "custom",
+					"short": "c",
+					"multipleOccurrences": false,
+					"description": "Use Headless mode to run without a User Interface"
+				}
+			]
+		},
+		"bundle": {
+			"active": true,
+			"icon": [
+				"icons/32x32.png",
+				"icons/128x128.png",
+				"icons/128x128@2x.png",
+				"icons/icon.icns",
+				"icons/icon.ico"
+			],
+			"identifier": "com.testing-cli.dev",
+			"targets": "all"
+		},
+		"security": {
+			"csp": null
+		},
+		"updater": {
+			"active": false
+		},
+		"windows": [
+			{
+				"visible": false,
+				"fullscreen": false,
+				"resizable": true,
+				"title": "testing-cli",
+				"width": 800,
+				"height": 600
+			}
+		]
+	}
+}
