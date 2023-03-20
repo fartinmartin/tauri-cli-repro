@@ -14,6 +14,15 @@ fn stout(text: &str) {
 
 fn main() {
     tauri::Builder::default()
+        .setup(|app| {
+            match app.get_cli_matches() {
+                Ok(matches) => {
+                    println!("{:?}", matches)
+                }
+                Err(_) => {}
+            }
+            Ok(())
+        })
         .invoke_handler(tauri::generate_handler![greet, stout])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
